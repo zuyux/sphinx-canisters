@@ -17,7 +17,7 @@ actor cerebellum {
 
     // Reference to the ICP Management Canister
     private let icManagementCanister = actor("aaaaa-aa") : actor {
-        rawHTTPSOutcall: (HttpTypes.Request) -> async HttpTypes.Response;
+        http_request: (HttpTypes.Request) -> async HttpTypes.Response;
     };
 
     // Utility function to perform an HTTP GET request
@@ -36,21 +36,25 @@ actor cerebellum {
             body = null;
         };
 
-        return await icManagementCanister.rawHTTPSOutcall(request);
+        // Using icManagementCanister's http_request function for the HTTP outcall
+        return await icManagementCanister.http_request(request);
     };
 
 
     // Utility function to perform an HTTP POST request using ICP Management Canister
     async func http_post(url: Text, headers: [(Text, Text)], body: ?Blob) : async HttpTypes.Response {
+        // Create the request object for POST
         let request: HttpTypes.Request = {
             url = url;
             method = #post;
             headers = headers;
             body = body;
         };
-        
-        return await icManagementCanister.rawHTTPSOutcall(request);
+
+        // Using icManagementCanister's http_request function for the HTTP outcall
+        return await icManagementCanister.http_request(request);
     };
+
 
     // Function to check if question is closed using the Stacks API
     async func isQuestionClosed() : async Bool {
