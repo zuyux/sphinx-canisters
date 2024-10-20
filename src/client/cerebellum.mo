@@ -12,7 +12,7 @@ actor cerebellum {
     // Reference to the Secret Manager
     public let secretManager = actor("secman") : actor {
         getOpenAIKey: () -> async Text;
-        getOwnerPrivateKey: () -> async Text; // Changed to Text
+        getOwnerPrivateKey: () -> async Text; 
     };
 
     // Reference to the ICP Management Canister
@@ -21,7 +21,7 @@ actor cerebellum {
     };
 
     // Utility function to perform an HTTP GET request using ICP Management Canister
-    async func http_get(url: Text, headers: [(Text, Text)] = []) : async HttpTypes.Response {
+    async func http_get(url: Text, headers: [(Text, Text)]) : async HttpTypes.Response {
         // Set headers to default value if not provided
         let effectiveHeaders : [(Text, Text)] = if (Array.size(headers) == 0) {
             [("Content-Type", "application/json")]

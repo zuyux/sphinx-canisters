@@ -1,29 +1,24 @@
 {
-  "version": 1,
-  "dfx": "0.22.0",
   "canisters": {
-    "backend": {
-      "type": "motoko",
-      "main": "backend/secman.mo"
+    "secman": {
+      "main": "src/backend/secman.mo",
+      "type": "motoko"
     },
-    "client": {
-      "type": "motoko",
-      "main": "src/client/cerebellum.mo"
-    }
-  },
-  "networks": {
-    "local": {
-      "bind": "127.0.0.1:8000"
-    },
-    "ic": {
-      "providers": [
-        "https://ic0.app"
-      ]
+    "cerebellum": {
+      "main": "src/client/cerebellum.mo",
+      "type": "motoko"
     }
   },
   "defaults": {
     "build": {
       "packtool": "mops sources"
     }
-  }  
+  },
+  "networks": {
+    "local": {
+      "bind": "127.0.0.1:8000",
+      "type": "ephemeral"
+    }
+  },
+  "version": 1
 }
