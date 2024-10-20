@@ -1,0 +1,7 @@
+[package]
+name = "ic"
+version = "1.0.1"
+description = "IC management canister interface"
+repository = "https://github.com/ZenVoich/ic"
+keywords = ["ic", "types", "interface"]
+license = "MIT"

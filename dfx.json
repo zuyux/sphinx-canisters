@@ -1,0 +1,29 @@
+{
+  "version": 1,
+  "dfx": "0.22.0",
+  "canisters": {
+    "backend": {
+      "type": "motoko",
+      "main": "backend/secman.mo"
+    },
+    "client": {
+      "type": "motoko",
+      "main": "src/client/requestor.mo"
+    }
+  },
+  "networks": {
+    "local": {
+      "bind": "127.0.0.1:8000"
+    },
+    "ic": {
+      "providers": [
+        "https://ic0.app"
+      ]
+    }
+  },
+  "defaults": {
+    "build": {
+      "packtool": "mops sources"
+    }
+  }  
+}
