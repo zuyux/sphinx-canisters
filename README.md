@@ -1,6 +1,6 @@
 # sphinx-canisters
 
-📦 Canisters for interacting with 🧩 Sphinx 🔗 Stacks contracts
+📦 Canisters for interacting with Sphinx 🔗 Stacks contracts
 
 ## 📝 Overview
 
