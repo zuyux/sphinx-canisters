@@ -41,7 +41,7 @@ The canisters provide functionality for:
 
 4. **💸 Fund Transfer to Winner**
    - The 🏆 winner of the question (based on 🤖 OpenAI evaluation) receives a reward. The canister initiates a 📡 POST request to the Stacks contract to transfer 💰 funds to the winning participant's address.
-   - If no responses are available in the contract, no winner is declared, and no transfer takes place.
+   - If no responses are available in the contract, no winner is declared, and $PHI tokens on the contract's pool are burned.
 
 ## 🛠️ Setup Instructions
 
