@@ -7,7 +7,7 @@
 The **sphinx-canisters** repository contains 🌐 Internet Computer (ICP) canisters that interact with **Stacks blockchain contracts** for managing 🌍 decentralized question-and-response sessions. The canisters automate operations like ✅ checking if a question has timed out, ⛔ closing questions, 🤖 calling OpenAI for evaluation, and 💸 transferring rewards to participants.
 
 The main components of the repository include:
-- `requestor.mo`: Handles interactions with the Stacks contracts, calls 🤖 OpenAI API to evaluate responses, and manages the flow of the Sphinx process.
+- `cerebellum.mo`: Handles interactions with the Stacks contracts, calls 🤖 OpenAI API to evaluate responses, and manages the flow of the Sphinx process.
 - `secman.mo`: A 🔒 secret manager canister for securely storing API 🔑 keys and private 🔑 keys.
 
 ## ⚙️ Functionality
@@ -18,7 +18,7 @@ The canisters provide functionality for:
    - A recurring ⏱️ timer is set to run every ⏳ hour using the `Timer` module from the 🛠️ Motoko base library. This timer triggers the main operation of checking whether a question is timed out and, if necessary, closes it and evaluates responses.
 
 2. **🔗 Stacks API Integration**
-   - The `requestor.mo` canister interacts with the **Stacks blockchain** using 🌐 HTTP outcalls. It checks if a question contract is open or closed, closes it, and initiates 💰 fund transfers.
+   - The `cerebellum.mo` canister interacts with the **Stacks blockchain** using 🌐 HTTP outcalls. It checks if a question contract is open or closed, closes it, and initiates 💰 fund transfers.
    - For interaction, HTTPS 📡 GET and POST requests are used to call the Stacks contracts.
 
 3. **🤖 OpenAI Integration**
@@ -71,7 +71,7 @@ The canisters provide functionality for:
 
 ## 📂 Key Files
 
-- **`requestor.mo`**: Manages the core logic for interacting with the Sphinx contracts, 🤖 OpenAI API calls, and flow management.
+- **`cerebellum.mo`**: Manages the core logic for interacting with the Sphinx contracts, 🤖 OpenAI API calls, and flow management.
 - **`secman.mo`**: A 🔒 secret manager for storing sensitive credentials like API keys.
 
 ## 📝 Example Workflow

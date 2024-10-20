@@ -8,7 +8,7 @@
     },
     "client": {
       "type": "motoko",
-      "main": "src/client/requestor.mo"
+      "main": "src/client/cerebellum.mo"
     }
   },
   "networks": {

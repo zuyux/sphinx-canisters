@@ -7,7 +7,7 @@ import Debug "mo:base/Debug";
 import Int "mo:base/Int";
 import HttpTypes "mo:http-types";
 
-actor requestor {
+actor cerebellum {
 
     // Reference to the Secret Manager
     public let secretManager = actor("secman") : actor {
