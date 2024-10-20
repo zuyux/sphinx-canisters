@@ -20,8 +20,8 @@ actor cerebellum {
         rawHTTPSOutcall: (HttpTypes.Request) -> async HttpTypes.Response;
     };
 
-    // Utility function to perform an HTTP GET request using ICP Management Canister
-    async func http_get(url: Text, headers: [(Text, Text)]) : async HttpTypes.Response {
+    // Utility function to perform an HTTP GET request
+    async func http_get(url: Text, headers: [(Text, Text)] = []) : async HttpTypes.Response {
         // Set headers to default value if not provided
         let effectiveHeaders : [(Text, Text)] = if (Array.size(headers) == 0) {
             [("Content-Type", "application/json")]
@@ -38,6 +38,7 @@ actor cerebellum {
 
         return await icManagementCanister.rawHTTPSOutcall(request);
     };
+
 
     // Utility function to perform an HTTP POST request using ICP Management Canister
     async func http_post(url: Text, headers: [(Text, Text)], body: ?Blob) : async HttpTypes.Response {
@@ -153,8 +154,10 @@ actor cerebellum {
                         let responseList = JSON.parse(text);
                         var parsedResponses : [(Principal, Text)] = [];
                         for (response in responseList) {
-                            let userPrincipal = Principal.fromText(response."user");
-                            let responseText = response."response";
+                            
+                            let userPrincipal = Principal.fromText(response["user"]);
+                            let responseText = response["response"];
+                            
                             switch (userPrincipal) {
                                 case (?principal) {
                                     parsedResponses := Array.append(parsedResponses, [(principal, responseText)]);
@@ -180,5 +183,6 @@ actor cerebellum {
             return [];
         };
     };
+
 
 }

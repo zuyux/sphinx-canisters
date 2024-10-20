@@ -1,0 +1,30 @@
+{
+  "replica_rev": "3d0b3f10417fc6708e8b5d844a0bac5e86f3e17d",
+  "type": "replica",
+  "config": {
+    "http_handler": {
+      "port": null,
+      "write_port_to": "/home/hax/Documents/.hax/sphinx/icp/.dfx/network/local/replica-configuration/replica-1.port"
+    },
+    "state_manager": {
+      "state_root": "/home/hax/Documents/.hax/sphinx/icp/.dfx/network/local/state/replicated_state"
+    },
+    "crypto": {
+      "crypto_root": "/home/hax/Documents/.hax/sphinx/icp/.dfx/network/local/state/crypto_store"
+    },
+    "artifact_pool": {
+      "consensus_pool_path": "/home/hax/Documents/.hax/sphinx/icp/.dfx/network/local/state/consensus_pool"
+    },
+    "subnet_type": "application",
+    "btc_adapter": {
+      "enabled": false,
+      "socket_path": null
+    },
+    "canister_http_adapter": {
+      "enabled": true,
+      "socket_path": "/tmp/ic-https-outcalls-adapter-socket.68039.1729462367"
+    },
+    "log_level": "error",
+    "artificial_delay": 600
+  }
+}

@@ -1,0 +1,4 @@
+service : {
+  getOpenAIKey: () -> (text) query;
+  getOwnerPrivateKey: () -> (text) query;
+}
