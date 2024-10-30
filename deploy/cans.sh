@@ -1,5 +1,5 @@
 #!/bin/bash
-export SPHINX_SECMAN=$(dfx canister id secman)
-export SPHINX_CEREBELLUM=$(dfx canister id cerebellum)
+export SPHINX_SECMAN=$(dfx canister id sec)
+export SPHINX_CEREBELLUM=$(dfx canister id gen)
 
-dfx deploy backend --argument="(principal \"${SPHINX_SECMAN}\", principal \"${SPHINX_CEREBELLUM}\")"
+dfx deploy backend --argument="(principal \"${SPHINX_SEC}\", principal \"${SPHINX_GEN}\")"

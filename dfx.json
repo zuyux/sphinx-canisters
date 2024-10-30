@@ -1,11 +1,11 @@
 {
   "canisters": {
-    "secman": {
-      "main": "src/backend/secman.mo",
+    "sec": {
+      "main": "src/backend/sec.mo",
       "type": "motoko"
     },
-    "cerebellum": {
-      "main": "src/client/cerebellum.mo",
+    "gen": {
+      "main": "src/backend/gen.mo",
       "type": "motoko"
     }
   },
