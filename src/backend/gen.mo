@@ -79,7 +79,7 @@ actor gen {
         if (Date.now().getHours() == 0) {  // Check if it’s 0:00 UTC
             await createDailyQuestion();
         }
-    }, 86400); // Run once every 24 hours
+    }, 60); // Run once every minute
 
     // Timer for checking question expiration every 6 hours
     Timer.recurring(async {
@@ -105,7 +105,7 @@ actor gen {
 
         if (Array.size(responses) > 0) {
             let responseCIDs = Array.map(responses, func (r) { r.1 });
-            let prompt = "Evaluate the following responses to select the best one:\n\n" # Text.concat(responseCIDs, "\n");
+            let prompt = "Evaluate the following responses to select the best one: return the address\n\n" # Text.concat(responseCIDs, "\n");
 
             let openAIKey = await secretManager.getOpenAIKey();
             let openAIResponse = await http_post("https://api.openai.com/v1/completions", [
